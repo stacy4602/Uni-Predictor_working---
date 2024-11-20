@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Uni Predict</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static' , filename='/image/Logo_Blue.png')}}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!--Common Style-->
+    <link rel="stylesheet" href="{{ url_for('static' , filename='style.css') }}" />
+    <!--For SignUp page-->
+    <link rel="stylesheet" href="{{ url_for('static' , filename='styler.css') }}" />
+    <!--For Login page-->
+    <link rel="stylesheet" href="{{ url_for('static' , filename='stylel.css') }}" />
+    <!--For Icon-->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css'>
+  </head>
+  <body>
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="mainNav">
+      <div class="container px-5">
+        <a class="navbar-brand fw-bold" style="color: #092431;" href="#page-top">   
+          <img src="{{ url_for('static' , filename='/image/Logo_Blue.png')}}" alt="#.." style="width:150px;">                  
+          Uni Predict</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+            <li class="nav-item first">
+              <button
+                data-bs-target="#modal_s"
+                data-bs-toggle="modal"
+                class="Sign_up_btn nav-link me-lg-3"
+              >
+                SignUp
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                data-bs-target="#modal_l"
+                data-bs-toggle="modal"
+                class="Login_in_btn nav-link me-lg-3"
+              >
+                Login
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Sign up Modal-->
+    <div
+      class="modal fade"
+      id="modal_s"
+      abindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      id="sign_modal"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form style="margin: 0px" action="">
+              <fieldset>
+                <h3>Registration</h3>
+                <label for="first-name"
+                  >First Name:
+                  <input
+                    type="text"
+                    id="first-name"
+                    required
+                    placeholder="Eg:John Doe"
+                  />
+                </label>
+                <label for="mail"
+                  >Email:
+                  <input
+                    type="email"
+                    id="mail"
+                    required
+                    placeholder="john.doe@gmail.com"
+                  />
+                </label>
+                <label for="pwd"
+                  >Password:
+                  <input type="password" id="pwd" required placeholder="hhh" />
+                </label>
+                <label
+                  >Who Are U?
+                  <select id="select" class="Type_User">
+                    <option value="1">User-"Looking for admission"</option>
+                    <option value="2">College Students</option>
+                    <option value="3">Alumni</option>
+                    <option value="4">Educational Experts</option>
+                  </select>
+                  <button class="Sign_Up">Sign UP</button>
+                </label>
+              </fieldset>
+              <fieldset>
+                <p style="margin: 15px 0">Sign Up With:</p>
+                <a href="#">
+                  <i class="fi fi-brands-google" style="margin-left:200px; width: 1500px; height:10px;"></i>
+                </a>
+                <a href="#">
+                  <i class="fi fi-brands-facebook" style="margin-left: 20px;"></i>                </a>
+              </fieldset>
+              <fieldset>
+                <p style="display: inline; margin-left: 150px">
+                  If Already a member
+                </p>
+                <button
+                  data-bs-target="#modal_l"
+                  data-bs-toggle="modal"
+                  class="Login_in_btn1"
+                >
+                  Login
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Modal Login-->
+    <div
+      class="modal fade"
+      id="modal_l"
+      abindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form style="margin: 0px" action="">
+              <fieldset>
+                <h3>Login</h3>
+                <label for="mail"
+                  >Email:
+                  <input
+                    type="email"
+                    id="mail"
+                    required
+                    placeholder="john.doe@gmail.com"
+                  />
+                </label>
+                <label for="pwd"
+                  >Password:
+                  <input type="password" id="pwd" required placeholder="hhh" />
+                </label>
+                <p style="text-align: end">
+                  <a href="#"> Forget Password? </a>
+                </p>
+                <button class="login_btn">Login</button>
+              </fieldset>
+              <fieldset>
+                <p style="margin: 15px 0">Login With:</p>
+                <a href="#">
+                  <i class="fi fi-brands-google" style="margin-left:200px; width: 1500px; height:10px;"></i>
+                </a>
+                <a href="#">
+                  <i class="fi fi-brands-facebook" style="margin-left: 20px;"></i>                </a>
+              </fieldset>
+              <fieldset>
+                <p>
+                  Don't Have Account Yet?
+                  <button
+                    data-bs-target="#modal_s"
+                    data-bs-toggle="modal"
+                    class="Sign_up_btn1"
+                  >
+                    SignUp
+                  </button>
+                </p>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Main Part-->
+    <div class="container-fluid" id="Banner">
+      <br /><br /><br /><br /><br /><br />
+      <div class="container position-relative">
+        <div class="row justify-content-center">
+                    <img src="{{ url_for('static' , filename='/image/Logo_Blue.png')}}" alt="#.." style="width:200px;">
+          <div class="text-center text-white">
+            <h1 style="text-align: center">
+              University Eligibility Admission Prediction
+            </h1>
+            <button class="call_to_action" ><a href="{{ url_for('predict')}}" style="color:white;">What's My Chance?</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Services-->
+    <section class="features-icons bg-light text-center">
+      <div class="container-fluid" style="background-color: white;">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <h3 style="color:#115f86;">Prediction</h3>
+              <img src="{{ url_for('static' , filename='/image/undraw_Predictive_analytics_re_wxt8.png')}}" style="width:300px; padding: 0px;" alt="..">
+              <p class="lead mb-0" > You Can Predict The Chance Based On Your Preferred Courses,Location,College And Marks</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <h3 style="color:#115f86;">Comparsion</h3>
+              <img src="{{ url_for('static' , filename='/image/undraw_mobile_analytics_72sr.png')}}" style="width:300px; padding: 0px;" alt="..">
+              <p class="lead mb-0">You Can Compare Any Colleges</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+              <h3 style="color:#115f86;">Informations</h3>
+              <img src="{{ url_for('static' , filename='/image/undraw_Searching_re_3ra9.png')}}" style="width:300px; padding: 0px;" alt="..">
+              <p class="lead mb-0">You Can Take A Trip To Colleges</p>
+            </div>
+          </div>
+            <div class="col-lg-6">
+              <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                <h3 style="color:#115f86;">Interaction</h3>
+                <img src="{{ url_for('static' , filename='/image/undraw_People_re_8spw.png')}}" style="width:300px; padding: 0px;" alt="..">
+                <p class="lead mb-0">You Can Interact With Alumi,Educational Experts And More Verifed Users</p>
+               </div>           
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Preferred Course-->
+    <br><br>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4">
+          <article>
+            <header class="mb-2">
+              <h2 style="display:inline; color:#0d445d; margin-bottom: 100px;">Colleges Based On Your Preferred Course</h1><br><br>
+            </header>
+          </article>
+          <div class="card mb-4">
+            <a href="#!"
+              ><img
+                class="card-img-top"
+                src="{{ url_for('static' , filename='/image/CARE-BACK-Top.jpg')}}"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <h2 class="card-title h4">CARE College Of Engineering,Trichy</h2>
+              <a class="btn " href="{{ url_for('info')}}">Take A Trip→</a>
+            </div>
+          </div>
+          <!-- Blog post-->
+          <div class="card mb-4">
+            <a href="#!"
+              ><img class="card-img-top" src="{{ url_for('static' , filename='/image/ceg_campus.jpeg')}}" alt="..."
+            /></a>
+            <div class="card-body">
+              <h2 class="card-title h4">Anna University CEG,Chennai</h2>
+              <a class="btn " href="">Take A Trip→</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <!-- Blog post-->
+          <div class="card mb-4">
+            <a href="#!"
+              ><img class="card-img-top" src="{{ url_for('static' , filename='/image/slider1.jpg')}}" alt="..."
+            /></a>
+            <div class="card-body">
+              <h2 class="card-title h4">PSG College of Technology, Coimbatore</h2>
+              <a class="btn" href="#!">Take A Trip→</a>
+            </div>
+          </div>
+          <!-- Blog post-->
+          <div class="card mb-4">
+            <a href="#!"
+              ><img
+                class="card-img-top"
+                src="{{ url_for('static' , filename='/image/bannari-amman-institute-of-technology-bait-coimbatore.jpg')}}"
+                alt="..."
+            /></a>
+            <div class="card-body">
+              <h2 class="card-title h4">Bannari Amman Institute of Technology, Erode</h2>
+              <a class="btn" href="#!">Take A Trip→</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Side widgets-->
+        <div class="col-lg-4">
+          <!-- Search widget-->
+          <div class="card mb-4">
+            <div class="card-header">Search</div>
+            <div class="card-body">
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Enter search term..."
+                  aria-label="Enter search term..."
+                  aria-describedby="button-search"
+                />
+                <button
+                  class="btn btn-primary"
+                  id="button-search"
+                  type="button"
+                >
+                  Go!
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Categories widget-->
+          <div class="card mb-4">
+            <div class="card-header">Top University</div>
+            <div class="card-body">
+              <div class="row">
+                <marquee behaviour="scroll" direction="up" scrollamount="4">
+                  <ul class="list-unstyled m-0 p-0">
+                    <li>
+                      <a style="color: black" href="#"
+                        >Easwari Engineering College, Chennai</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" style="color: black">MIT Chennai, Chennai</a>
+                    </li>
+                    <li>
+                      <a href="#" style="color: black"
+                        >Chennai Institute of Technology,Chennai.</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" style="color: black">PEC Chennai, Chennai</a>
+                    </li>
+                    <li>
+                      <a href="#" style="color: black">VEC Chennai, Chennai</a>
+                    </li>
+                    <li>
+                      <a href="#" style="color: black"
+                        >VEC Kanchipuram, Kanchipuram</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" style="color: black"
+                        >PSG College of Technology, Coimbatore</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" style="color: black"
+                        >Bannari Amman Institute of Technology, Erode</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" style="color: black"
+                        >Kongu Engineering College, Erode</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" style="color: black"
+                        >Mahendra Engineering College, Namakkal</a
+                      >
+                    </li>
+                  </ul>
+                </marquee>
+              </div>
+            </div>
+          </div>
+          <!-- Side widget-->
+          <div class="card mb-2">
+            <div class="card-header">Time and Deadline</div>
+            <div class="card-body">
+              <table class="time_table">
+                <tr>
+                  <th>Exam</th>
+                  <th>Registration Starts</th>
+                  <th>Deadline</th>
+                </tr>
+                <tr>
+                  <td>JEE</td>
+                  <td>August 12</td>
+                  <td>September 10</td>
+                </tr>
+                <tr>
+                  <td>National Level Engineering Entrance Exams</td>
+                  <td>September 15</td>
+                  <td>January 25</td>
+                </tr>
+                <tr>
+                  <td>JEE Advanced</td>
+                  <td>November 19</td>
+                  <td>February31</td>
+                </tr>
+                <tr>
+                  <td>
+                    Engineering Agricultural and Medical Common Entrance Test
+                  </td>
+                  <td>January 30</td>
+                  <td>February14</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4">
+            <article>
+              <header class="mb-2">
+                <h2 style="display:inline; color:#0d445d; margin-bottom: 100px;">Colleges Based On Your Preferred Colleges</h1><br><br>
+                </header>
+            </article>
+            <div class="card mb-4">
+              <a href="#!"
+                ><img
+                  class="card-img-top"
+                  src="{{ url_for('static' , filename='/image/CARE-BACK-Top.jpg')}}"
+                  alt="..."
+              /></a>
+              <div class="card-body">
+                <h2 class="card-title h4">CARE College Of Engineering,Trichy</h2>
+                <a class="btn " href="{{ url_for('info')}}">Take A Trip→</a>
+              </div>
+            </div>
+            <!-- Blog post-->
+            <div class="card mb-4">
+              <a href="#!"
+                ><img class="card-img-top" src="{{ url_for('static' , filename='/image/ceg_campus.jpeg')}}" alt="..."
+              /></a>
+              <div class="card-body">
+                <h2 class="card-title h4">Anna University CEG,Chennai</h2>
+                <a class="btn " href="">Take A Trip→</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <!-- Blog post-->
+            <div class="card mb-4">
+              <a href="#!"
+                ><img class="card-img-top" src="{{ url_for('static' , filename='/image/slider1.jpg')}}" alt="..."
+              /></a>
+              <div class="card-body">
+                <h2 class="card-title h4">PSG College of Technology, Coimbatore</h2>
+                <a class="btn" href="#!">Take A Trip→</a>
+              </div>
+            </div>
+            <!-- Blog post-->
+            <div class="card mb-4">
+              <a href="#!"
+                ><img
+                  class="card-img-top"
+                  src="{{ url_for('static' , filename='/image/bannari-amman-institute-of-technology-bait-coimbatore.jpg')}}"
+                  alt="..."
+              /></a>
+              <div class="card-body">
+                <h2 class="card-title h4">Bannari Amman Institute of Technology, Erode</h2>
+                <a class="btn" href="#!">Take A Trip→</a>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Side widgets-->
+          <div class="col-lg-4">
+            <!-- Categories widget-->
+            <div class="card mb-4">
+              <div class="card-header">Newsfeed/Article</div>
+              <div class="card-body">
+                <div class="row">
+                    <ul class="list-unstyled m-0 p-0">
+                      <li>
+                        <a style="color: black" href="https://www.khanacademy.org/college-careers-more/college-admissions/applying-to-college/college-application-process/a/college-application-checklist"
+                          >College application checklist (article)</a
+                        >
+                      </li>
+                      <li>
+                        <a href="https://www.exambazaar.com/blogpost/important-documents-required-for-admissions-in-university" style="color: black">Important Documents Required For Admissions in University</a>
+                      </li>
+                      <li>
+                        <a href="https://www.hindustantimes.com/education/no-need-to-submit-original-documents-during-admission-says-ugc/story-tqKQ39UASKyC96lB9eZtqM.html" style="color: black"
+                          >No need to submit original documents during admission</a
+                        >
+                      </li>
+                      <li>
+                        <a href="https://www.hansrajcollege.ac.in/hCPanel/uploads/focus/3-7-17_ncwebadmn.pdf" style="color: black">List of Documents Required at the Times of Admission</a>
+                      </li>
+                      <li>
+                        <a href="https://www.hindustantimes.com/cities/mumbai-news/inhouse-degree-college-admissions-attract-fewer-applications-this-year-101655923731694.html" style="color: black">In-house degree college admissions attract fewer applications</a>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Side widget-->
+            <div class="card mb-2">
+              <div class="card-header">Discussion Forum</div>
+              <div class="card-body">
+                <textarea name="Query Box"  cols="50" rows="10" placeholder="Enter Your Queries Here!!"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+    <!--Script Page-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Care College Of Engineering</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{{ url_for('static' , filename='college.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static' , filename='stylel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='stylel.css') }}">
+    <!--Location icon-->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <!--Global Website icon-->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css'>
+ 
+  </head>
+  <body>
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="mainNav">
+      <div class="container px-5">
+        <img src="{{ url_for('static' , filename='/image/Logo_Blue.png')}}" alt="#.." style="width:50px;">                  
+        Uni Predict</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+            <li class="nav-item first">
+              <button
+                data-bs-target="#modal_s"
+                data-bs-toggle="modal"
+                class="Sign_up_btn nav-link me-lg-3"
+              >
+                SignUp
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                data-bs-target="#modal_l"
+                data-bs-toggle="modal"
+                class="Login_in_btn nav-link me-lg-3"
+              >
+                Login
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Sign up Modal-->
+    <div
+      class="modal fade"
+      id="modal_s"
+      abindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      id="sign_modal"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form style="margin: 0px" action="">
+              <fieldset>
+                <h3>Registration</h3>
+                <label for="first-name"
+                  >First Name:
+                  <input
+                    type="text"
+                    id="first-name"
+                    required
+                    placeholder="Eg:John Doe"
+                  />
+                </label>
+                <label for="mail"
+                  >Email:
+                  <input
+                    type="email"
+                    id="mail"
+                    required
+                    placeholder="john.doe@gmail.com"
+                  />
+                </label>
+                <label for="pwd"
+                  >Password:
+                  <input type="password" id="pwd" required placeholder="hhh" />
+                </label>
+                <label
+                  >Who Are U?
+                  <select id="select" class="Type_User">
+                    <option value="1">User-"Looking for admission"</option>
+                    <option value="2">College Students</option>
+                    <option value="3">Alumni</option>
+                    <option value="4">Educational Experts</option>
+                  </select>
+                  <button class="Sign_Up">Sign UP</button>
+                </label>
+              </fieldset>
+              <fieldset>
+                <p style="margin: 15px 0">Sign Up With:</p>
+                <a href="#">
+                  <i class="fi fi-brands-google" style="margin-left:200px; width: 1500px; height:10px;"></i>
+                </a>
+                <a href="#">
+                  <i class="fi fi-brands-facebook" style="margin-left: 20px;"></i>                </a>
+              </fieldset>
+              <fieldset>
+                <p style="display: inline; margin-left: 150px">
+                  If Already a member
+                </p>
+                <button
+                  data-bs-target="#modal_l"
+                  data-bs-toggle="modal"
+                  class="Login_in_btn1"
+                >
+                  Login
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Modal Login-->
+    <div
+      class="modal fade"
+      id="modal_l"
+      abindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form style="margin: 0px" action="">
+              <fieldset>
+                <h3>Login</h3>
+                <label for="mail"
+                  >Email:
+                  <input
+                    type="email"
+                    id="mail"
+                    required
+                    placeholder="john.doe@gmail.com"
+                  />
+                </label>
+                <label for="pwd"
+                  >Password:
+                  <input type="password" id="pwd" required placeholder="hhh" />
+                </label>
+                <p style="text-align: end">
+                  <a href="#"> Forget Password? </a>
+                </p>
+                <button class="login_btn">Login</button>
+              </fieldset>
+              <fieldset>
+                <p style="margin: 15px 0">Login With:</p>
+                <a href="#">
+                  <i class="fi fi-brands-google" style="margin-left:200px; width: 1500px; height:10px;"></i>
+                </a>
+                <a href="#">
+                  <i class="fi fi-brands-facebook" style="margin-left: 20px;"></i>                </a>
+              </fieldset>
+              <fieldset>
+                <p>
+                  Don't Have Account Yet?
+                  <button
+                    data-bs-target="#modal_s"
+                    data-bs-toggle="modal"
+                    class="Sign_up_btn1"
+                  >
+                    SignUp
+                  </button>
+                </p>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!--Image-->
+        <br> <br>
+        <div class="container-fluid">
+            <div class="text-center">
+              <img src="{{ url_for('static' , filename='/image/CARE-BACK-Top.jpg')}}" class="img-fluid rounded" alt="...">
+            </div>
+        </div>
+        
+        <!--Basic Information -->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12" style="background-color: lavender; z-index:-1;">
+              <h1 style="display:inline;">Care College of Engineering</h1>
+              <p style="display:block; float: right; margin-right: 30px; font-size: large;"> Review:</p>
+              <br>
+              <i class="fi fi-br-star" style=" float: right;"></i>
+              <i class="fi fi-sr-star" style=" float: right;"></i>
+              <i class="fi fi-sr-star" style=" float: right;"></i>
+              <i class="fi fi-sr-star" style=" float: right;"></i>
+              <i class="fi fi-sr-star" style="float: right;"></i>
+              <h5>              
+                <i class="fi fi-br-marker" style="display:inline;"></i>
+                Trichy,Tamil Nadu</h5>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12" style="background-color:lavenderblush;">
+                <ul class="meanuItemContainerList list-unstyled m-0 p-0">
+                  <li style="display:inline ">
+                    <a class="btn"  href="#College Highlights" role="button">College Information</a>
+                  </li>
+                  <li style="display:inline;">
+                    <a class="btn"  href="#Course-Details" role="button">Course Details</a>
+                  </li>
+                  <li style="display:inline;">
+                    <a class="btn"  href="#Fee-Structure" role="button">Fee Structure</a>
+                  </li>
+                </ul>
+            </div>
+          </div>
+          <br><br>
+
+          </div>
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                  College Information
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                    <div class="row">
+                      <div class="card mb-4">
+                        <div class="card-header" style="text-align:center;">College Highlights</div>
+                        <div class="card-body">
+                            <div>
+                              <p style="float:right;">
+                                <i class="fi fi-rs-school"></i>
+                                Affiliated With:Anna University
+                              </p> 
+                              <p"><i
+                              class=
+                              "fi fi-rs-globe"
+                              ></i>Official Website:                     
+                              <a href="https://care.ac.in/" target="_blank" style="text-decoration:underline; color:black">Care Website</a>  
+                            </p>
+                            <p style="float:right;">
+                              <i class="fi fi-rr-graduation-cap"></i>
+                              Ownership:Private
+                            </p>
+                              <p>
+                                <i class="fi fi-ss-school"></i>
+                                Accredited By: AICTE
+                              </p>    
+                              <hr>
+                              <h3>Facilites</h3>
+                              <table class="facilites">
+                                <tr>
+                                  <td>
+                                    <i class="fi fi-rs-building"></i>
+                                    Hostel
+                                  </td>
+                                  <td>
+                                    <i class="fi fi-rr-computer"></i>
+                                    Computer lab
+                                  </td>
+                                  <td>
+                                    <i class="fi fi-rs-book-alt"></i>
+                                    Library
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <i class="fi fi-rs-home"></i>
+                                    Class room
+                                  </td>
+                                  <td>
+                                    <i class="fi fi-rr-test-tube"></i>
+                                    Laboratories
+                                  </td>
+                                  <td>
+                                    <i class="fi fi-rr-presentation"></i>
+                                    Conference Room
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <i class="fi fi-rr-handshake"></i>
+                                    Placement
+                                  </td>
+                                  <td>
+                                    <i class="fi fi-rr-hand-holding-heart"></i>
+                                    Safety
+                                  </td>
+                                  <td>
+                                    <i class="fi fi-rr-shop"></i>
+                                    Canteen
+                                  </td>
+                                </tr>
+                              </table>
+                              <br><br>
+                              <div>
+                                <hr>
+                                <table class="course_details">
+                                  <h3>Contact Details</h3>
+                                  <tr>
+                                    <td>
+                                      <i class="fi fi-rr-phone-call"></i>
+                                      0431-2690505, 91769 28000
+                                    </td>
+                                    <td rowspan="4">
+                                      <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Care College of engineering&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://formatjson.org/">format json</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <i class="fi fi-rs-envelope"></i>
+                                      <a href="contact@care.ac.in">contact@care.ac.in</a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                   <td>
+                                    <i class="fi fi-rr-arrow-up-right-from-square"></i>
+                                    <a href="https://care.ac.in/engineering/">https://care.ac.in/engineering/</a>
+                                   </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <i class="fi fi-rs-map-marker"></i>
+                                      #27, Dindigal Main Road, Thayanur,
+                                      <br> Tircuchirappalli, Tamil Nadu 620009
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                
+                </div>
+              </div>
+            </div>
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                    Course Details
+                  </button>
+                </h2>
+              </div>
+              </div>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                    <div class="row">
+                      <div class="card mb-4">
+                        <div class="card-header" style="text-align:center;" id="Course-Details">Course Details</div>
+                        <div class="card-body">
+                          <table class="course_table">
+                                <tr>
+                                  <th>
+                                    Course
+                                  </th>
+                                  <th>
+                                    Specialization
+                                  </th>
+                                  <th>
+                                    Duration
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    B.E
+                                  </td>
+                                  <td>
+                                    Computer Science and Engineering
+                                  </td>
+                                  <td>
+                                    4 Years
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    B.E
+                                  </td>
+                                  <td>
+                                    Civil Engineering
+                                  </td>
+                                  <td>
+                                    4 Years
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    B.E
+                                  </td>
+                                  <td>
+                                    Electronics and Communication Engineering
+                                  </td>
+                                  <td>
+                                    4 Years
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    B.E
+                                  </td>
+                                  <td>
+                                    Mechanical Engineering
+                                  </td>
+                                  <td>
+                                    4 Years
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    B.Tech
+                                  </td>
+                                  <td>
+                                    Artificial Intelligence and Data Science
+                                  </td>
+                                  <td>
+                                    4 Years
+                                  </td>
+                                </tr>
+                          </table>
+                        </div>
+                      </div>
+ 
+                    </div>                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+                  Fee Structure
+                </button>
+              </h2>
+            </div>
+            </div>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                    <div class="row">
+                      <div class="card mb-4">
+                        <div class="card-header" style="text-align:center;" id="Fee-Structure">Fee Structure</div>
+                        <div class="card-body">
+                          <table class="fee_table" >
+                                <tr>
+                                  <th>
+                                    Course
+                                  </th>
+                                  <th>
+                                    Specialization
+                                  </th>
+                                  <th>
+                                   Annual Fees
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    B.E
+                                  </td>
+                                  <td>
+                                    Computer Science and Engineering
+                                  </td>
+                                  <td>
+                                    90,000
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    B.E
+                                  </td>
+                                  <td>
+                                    Civil Engineering
+                                  </td>
+                                  <td>
+                                    75,000
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    B.E
+                                  </td>
+                                  <td>
+                                    Electronics and Communication Engineering
+                                  </td>
+                                  <td>
+                                    90,000
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    B.E
+                                  </td>
+                                  <td>
+                                    Mechanical Engineering
+                                  </td>
+                                  <td>
+                                    90,000
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    B.Tech
+                                  </td>
+                                  <td>
+                                    Artificial Intelligence and Data Science
+                                  </td>
+                                  <td>
+                                    90,000
+                                  </td>
+                                </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </div>                
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </nav>
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

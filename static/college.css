@@ -1,0 +1,82 @@
+#mainNav{
+    background-color: lavender;
+}
+.Sign_up_btn{
+    width: 100PX;
+    padding: 10px;
+    border: none;
+    margin: 10px 0;
+    min-height: 25px;
+    border-radius: 10px;
+    background-color:#0c86be;
+    color: white;
+    font-size: medium;
+    cursor: pointer;   
+    border: none;
+}
+.Login_in_btn{
+    width: 100PX;
+    padding: 10px;
+    border: none;
+    margin: 10px 0;
+    min-height: 25px;
+    border-radius: 10px;
+    background-color:#0c86be;
+    color: white;
+    font-size: medium;
+    cursor: pointer;   
+    border: none;}
+    
+.Sign_up_btn:hover{
+    background-color: #31a5db;
+    color: white;
+  }
+.Login_in_btn:hover{
+    background-color: #31a5db;
+    color: white;
+  }
+.Login_in_btn1{
+    border: none;
+    display:inline;
+}
+.Sign_up_btn1{
+    border: none;
+    display:inline;
+}
+.facilites,td,tr{
+    padding:40px;
+    border-bottom: 4px solid #83d2f7;
+}
+.facilites,.course_details,.course_table,.fee_table{
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn{
+    width:180PX;
+    padding:5px;
+    border: none;
+    margin: 20px 0;
+    margin-left: 10px;
+    min-height: 25px;
+    border-radius: 10px;
+    background-color:#0c86be;
+    color: white;
+    font-size: medium;
+    cursor: pointer;   
+    border: none;
+}
+.Sign_Up{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    margin: 10px 0;
+    min-height: 25px;
+    border-radius: 10px;
+    background-color:#0c86be;
+    color: white;
+    font-size: medium;
+    cursor: pointer;
+  }
+  .Sign_Up:hover{
+    background-color: 31a5db;
+  }

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Uni Predict</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static' , filename='/image/Logo_Blue.png')}}"
+    />
+    <!--Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{{ url_for('static' , filename='predictor.css') }}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container prediction">
+        <form action="{{ url_for('result') }}" method="post" name="form">
+          <h1>Uni Predict</h1>
+          <fieldset>
+            <label for="Name">
+              <i class="fi fi-rs-user"></i>
+              Name:         </label>
+              <input type="text" name="name" id="Name" required />
+              <br />
+            <label for="mail">
+              <i class="fi fi-rs-envelope"></i>
+              Email:</label> 
+              <input type="email" name="email" id="mail" required />
+          </fieldset>
+          <fieldset>             
+              <label for="preclg">
+              <i class="fi fi-rs-bank"></i>
+              Preferred College:            </label>
+              <select id="com">
+                <option disabled selected>Select College</option>
+                {% for i in College_name: %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}             
+              </select>   
+              <label for="BranchCode">
+                <i class="fi fi-rs-bank"></i>
+                Branch Code:</label>
+                <select id="BranchCode">
+                  <option disabled selected>Select Branch Code</option>
+                  {% for i in dept_code: %}
+                  <option value="{{ i }}">{{ i }}</option>
+                  {% endfor %}
+                </select>          
+              <label for="precour">
+              <i class="fi fi-rs-edit"></i>
+              Preferred Branch:</label>
+              <select id="precour">
+                <option disabled selected>Select Branch</option>
+                {% for i in dept: %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+              </select> 
+          </fieldset>
+          <fieldset>
+            <label for="board">
+              <i class="fi fi-rs-school"></i>
+              12<span id="super">th</span>Board:
+                       </label>
+              <input
+                type="radio"
+                name="Board"
+                id="board"
+                style="display: inline; margin-left:0px; min-height: 0px "
+              /> <span style="font-size: large ; margin-right: 5px;">State Board</span>
+              <input
+                type="radio"
+                name="Board"
+                id="board"
+                style="display: inline; margin: 0px; min-height: 0px"
+              /><span style="font-size: large ; margin-right: 5px;">ICSE</span>
+              <input
+                type="radio"
+                name="Board"
+                id="board"
+                style="display: inline; margin: 0px; min-height: 0px"
+              /><span style="font-size: large ; margin-right: 5px;">CBSE</span>
+              <br>
+            <label for="cutoff">
+              <i class="fi fi-rs-assept-document"></i>
+              CutOff:</label>
+              <input type="number" name="CutOff" id="cutoff" max="200" required />
+            <br>
+            <label for="rank">
+              <i class="fi fi-rs-bank"></i>
+              Rank:</label>
+              <input type="number" name="Rank" id="rank" min="1" max="200000" required />
+            <label for="com">
+              <i class="fi fi-rr-users-alt"></i>
+              Community:            </label>
+              <select id="com">
+                <option disabled selected>Select Community</option>
+                {% for i in com: %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+              </select>
+            <br>
+            <label for="round">
+              <i class="fi fi-rr-refresh"></i>
+              Round:            </label>
+              <input type="number" name="Round" id="round" min="0" max="4" />
+          </fieldset>
+          <button class="predict">Predict It!!</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel1 overlay-left">
+          <img src="{{ url_for('static' , filename='/image/Logo_Blue.png')}}" alt="#.." style="width:200px;">
+          <br>
+        </div>
+        <div class="overlay-panel overlay-left">
+        <h3>Here's Your Percentage of Chance</h3><br>
+          <div class="circular-progress">
+            <span class="progress-value"> {{ percent }}</span>
+          </div>
+        </div>
+        <div class="overlay-panel1 overlay-left">
+          <a href="{{ url_for('landing')}}">
+          <img src="{{ url_for('static' , filename='/image/Logo_Blue.png')}}" alt="#.." style="width:200px;">
+          </a>
+          <br>
+        </div>        
+      </div>
+    </div>
+    <script src="{{ url_for('static' , filename='predictor.js') }}"></script>
+  </body>
+</html>
+
+
